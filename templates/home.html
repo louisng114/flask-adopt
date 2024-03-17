@@ -1,0 +1,14 @@
+{%extends "base.html"%}
+
+{%block title%}Homepage{%endblock%}
+{%block content%}
+<h1>Pets</h1>
+{%for pet in pets%}
+{%if pet.photo_url != "" %}<img src="{{pet.photo_url}}", height="200px"> <br>{%endif%}
+<a href="/pets/{{pet.id}}">{{pet.name}}</a> is {%if pet.available%}<b>available!</b>{%else%}unavailable{%endif%} <br><br>
+{%endfor%}
+
+<br>
+
+<a href="/add"><button>add new pet</button></a>
+{%endblock%}
